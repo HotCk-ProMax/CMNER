@@ -8,7 +8,8 @@ Train:
 python cmner.py --do_train --txtdir=./data/ner_txt --imgdir=./data/ner_img --ckpt_path=./v1_model.pt --num_train_epoch=30 --train_batch_size=16 --lr=0.0001 --seed=2024
 ```
 Website:
-Enter in the command line:
+
+Enter in the command.
 ```
 python -m http.server PORT
 ```
