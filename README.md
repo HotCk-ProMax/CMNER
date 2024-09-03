@@ -13,6 +13,6 @@ Enter in the command line:
 python -m http.server PORT
 ```
 If you use the conda virtual environment, you may need to start the web page in the corresponding environment.
-Start the ```CMNER\NewsNER_Site\templates``` access page in localhost:PORT.
+Start the ```CMNER\NewsNER_Site\templates``` access page in ```localhost:PORT```.
 
 Use ```CMNER\NewsNER_Site\run.py``` to update web page data.
