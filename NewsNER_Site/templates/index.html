@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Portal</title>
+    <style>
+        /* 全局样式设置 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('../images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        /* 头部样式 */
+        header {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        header #title {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        header #date-time {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #cccccc;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s, background-color 0.3s;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* 内容区域样式 */
+        #content {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #content h2 {
+            font-size: 56px;
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        #content p.intro-text {
+            font-size: 20px;
+            color: #dddddd;
+            margin-bottom: 40px;
+        }
+
+        /* 示例新闻块样式 */
+        .news-sample {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .news-sample img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            object-fit: cover;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .news-sample .news-text {
+            text-align: left;
+            width: 100%;
+        }
+
+        .news-sample .news-text h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .news-sample .news-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        .news-sample .entities {
+            font-size: 16px;
+            color: #ffd700;
+        }
+
+        .news-sample .entities span {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        /* 网站简介样式 */
+        #description {
+            font-size: 18px;
+            color: #dddddd;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            #content h2 {
+                font-size: 40px;
+            }
+
+            .news-sample .news-text h3 {
+                font-size: 22px;
+            }
+
+            .news-sample .news-text p,
+            .news-sample .entities,
+            #description {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="title">News Portal</div>
+        <div id="date-time">
+            <!-- 用JavaScript展示当前时间 -->
+            <script>
+                function updateTime() {
+                    const now = new Date();
+                    const options = { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric', 
+                        hour: '2-digit', 
+                        minute: '2-digit', 
+                        second: '2-digit' 
+                    };
+                    const dateTimeString = now.toLocaleDateString('en-US', options);
+                    document.getElementById('date-time').textContent = dateTimeString;
+                }
+
+                setInterval(updateTime, 1000);  // 每秒钟更新一次
+                updateTime();  // 初始化调用
+            </script>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="business.html">Business</a>
+        <a href="entertainment.html">Entertainment</a>
+        <a href="politics.html">Politics</a>
+        <a href="sport.html">Sport</a>
+        <a href="technology.html">Technology</a>
+    </nav>
+
+    <div id="content">
+        <h2>Welcome to the News Portal</h2>
+
+        <!-- 示例新闻块 -->
+        <div class="news-sample">
+            <img src="../images/news3.webp" alt="Sample News">
+            <div class="news-text">
+                <h3>Breaking News: "Black Myth: Wukong" Official Release Date Announced</h3>
+                <p>The highly anticipated action RPG, "Black Myth: Wukong," finally has an official release date. Fans of the game have been eagerly awaiting this moment since its initial announcement. The game, which is based on the classic Chinese novel "Journey to the West," promises to deliver stunning visuals, intense combat, and an immersive story.</p>
+                <div class="entities">
+                    <strong>Recognized Entities:</strong>
+                    <span>Black Myth: Wukong</span>
+                    <span>Action RPG</span>
+                    <span>Journey to the West</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 网站简介 -->
+        <div id="description">
+            This website is a real-time news portal that crawls and performs cross-domain named entity recognition on the latest news. Each day, it collects 100 trending news articles from well-known categories such as business, entertainment, politics, sport, and technology, and identifies the named entities within them. The purpose of this website is to provide users with insightful analysis and recognition of key entities in the news.
+        </div>
+    </div>
+
+</body>
+</html>

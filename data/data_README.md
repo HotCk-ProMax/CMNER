@@ -1,0 +1,1 @@
+Your data collected using [NewsNER](https://github.com/HotCk-ProMax/NewsNER) here.
